@@ -1,3 +1,4 @@
+*/download image from the web*/
 import random
 import urllib.request
 
@@ -20,3 +21,19 @@ print(text)
 fr.close()
 
 */dowloading files from the web*/
+
+from urllib import request
+goog_url = 'http://samplecsvs.s3.amazonaws.com/Sacramentorealestatetransactions.csv'
+
+def download_stock_data(csv_url):
+    response = request.urlopen(csv_url)
+    csv = response.read()
+    csv_str = str(csv)
+    lines = csv_str.split("\\n")
+    dest_url = r'goog.csv'
+    fx = open(dest_url, "w")
+    for line in lines:
+        fx.write(line + "\n")
+    fx.close()
+
+download_stock_data(goog_url)
