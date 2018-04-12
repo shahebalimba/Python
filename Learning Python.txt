@@ -7,3 +7,16 @@ def download_web_image(url):
     urllib.request.urlretrieve(url, full_name)
 
 download_web_image("https://ieee.ahduni.edu.in/images/Gallery/Members_2017/Akash.jpg")
+
+*/Read & Write a files*/
+fw = open('sample.txt', 'w')
+fw.write('Writing some stuff in my text file \n')
+fw.write('i like bacon \n')
+fw.close()
+
+fr = open('sample.txt', 'r')
+text = fr.read()
+print(text)
+fr.close()
+
+*/dowloading files from the web*/
